@@ -31,6 +31,11 @@
     font-style: normal;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
 /* Reset and base styles  */
 * {
     padding: 0px;
@@ -49,6 +54,12 @@ a:link,
 a:visited {
     text-decoration: none;
 }
+
+a {
+    color: inherit;
+}
+
+;
 
 a:hover {
     text-decoration: none;
@@ -91,17 +102,15 @@ svg {
 }
 
 button {
+    cursor: pointer;
     background-color: inherit;
 }
+
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
     .container {
-        margin: auto;
-        min-width: 320px;
-        max-width: 420px;
-        text-align: left;
-        height: 535px;
+        overflow-x: hidden;
         background-color: #F8F8F8;
         display: flex;
         flex-direction: column;
@@ -109,17 +118,20 @@ button {
     }
 
 
-    .header__nav {
-        padding: 4%;
+    .header__nav-menu {
+        padding: 15px;
         background-color: #FFFFFF;
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
         align-items: center;
-
     }
 
-    .header__nav-icon {
+    .header__nav-toolsGroup {
+        display: flex;
+        gap: 16px;
+    }
+
+    .icon {
         width: 40px;
         height: 40px;
         background: #FF3E79;
@@ -136,14 +148,12 @@ button {
     }
 
     .header__logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         position: relative;
     }
 
     .header__logo::after {
         position: absolute;
+        top: 10px;
         left: 110%;
         content: '';
         width: 2px;
@@ -177,20 +187,17 @@ button {
         position: relative;
         display: flex;
         left: 5%;
-
     }
 
     .content__menu {
         overflow-x: auto;
         position: relative;
-        display: flex;
         left: 5%;
     }
 
     .content__menu-list {
         display: flex;
         list-style: none;
-
     }
 
     .content__link {
@@ -207,7 +214,7 @@ button {
     }
 
 
-    .content__link:focus {
+    .content__link:hover {
         background: #FFFFFF;
         border: 2px solid #B8FFEC;
         border-radius: 6px;
@@ -216,28 +223,29 @@ button {
     .content__about {
         display: flex;
         flex-direction: column;
-        gap: 0px;
+        left: 5%;
+        position: relative;
     }
 
 
-    .content__about-text_320 {
+    .content__about-text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .content__about-text>p {
         font-family: 'TT Lakes Regular';
         font-size: 14px;
         letter-spacing: 0.2px;
         line-height: 18px;
-        left: 5%;
-        position: relative;
-
+        width: 288px;
+        height: 90px;
+        overflow: hidden;
     }
 
-    .about__text-2 {
-        line-height: 24px;
-        font-size: 16px;
-        font-family: 'TT Lakes Medium';
-        letter-spacing: -0.2px;
-    }
 
-    .about__text-2::before{
+    .about__elem::before {
         content: '';
         background-image: url(./src/img/text.svg);
         width: 8px;
@@ -248,55 +256,60 @@ button {
     }
 
     .about__elem {
-        left: 15%;
+        left: 10%;
         position: relative;
+        line-height: 24px;
+        font-size: 16px;
+        font-family: 'TT Lakes Medium';
+        letter-spacing: -0.2px;
     }
 
-    .about__elem-2 {
+    .about__elem-img {
         display: flex;
         align-items: center;
         height: 230.8px;
+        left: -16px;
+        position: relative;
 
 
     }
 
-    .message,
-    .user,
-    .number,
-    .content__about-text_768,
-    .content__about-text_1120 {
+    .header__nav-userGroup {
         display: none;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
-    .container {
-        margin: auto;
-        text-align: left;
 
+    .container {
+        overflow-x: hidden;
         background-color: #F8F8F8;
         display: flex;
         flex-direction: column;
         gap: 24px;
     }
 
-    .header__nav {
-        padding:2%;
+    .header__nav-menu {
+        padding: 15px;
         background-color: #FFFFFF;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        position: relative;
-        gap: 5.5%;
     }
 
-    .header__group-user {
-        position: absolute;
+    .header__nav-toolsGroup {
         display: flex;
         gap: 16px;
-        right: 20%;
     }
 
-    .header__nav-icon {
+    .header__nav-userGroup {
+        position: relative;
+        left: 40px;
+        display: flex;
+        gap: 16px;
+    }
+
+    .icon {
         width: 40px;
         height: 40px;
         background: #FF3E79;
@@ -312,37 +325,28 @@ button {
     }
 
     .header__logo {
-        display: flex;
-        align-items: center;
         position: relative;
+        left: -64px;
     }
 
-    .header__logo::before {
+    .header__nav-menu:first-child::after {
         position: absolute;
-        right: 120%;
+        top: 25px;
+        left: 80px;
         content: '';
         width: 2px;
         height: 32px;
         background-color: #EAEAEA;
     }
 
-    .header__nav-icon.user::after {
+    .header__nav-menu:last-child::before {
         position: absolute;
-        left: 107%;
+        top: 25px;
+        left: 615px;
         content: '';
         width: 2px;
         height: 32px;
         background-color: #EAEAEA;
-    }
-
-    .header__nav-icon.search {
-        position: absolute;
-        left:90%
-    }
-
-    .header__nav-icon.tools {
-        position: absolute;
-        right: 11.5%;
     }
 
     .content {
@@ -358,7 +362,7 @@ button {
         background-color: #41F6D7;
         position: absolute;
         gap: 12px;
-        left: -3%;
+        left: -5%;
         border-radius: 10px;
     }
 
@@ -369,21 +373,18 @@ button {
         font-family: 'TT Lakes Bold';
         position: relative;
         display: flex;
-        left: 3%;
-
+        left: 40px;
     }
 
     .content__menu {
         overflow-x: auto;
         position: relative;
-        display: flex;
-        left: 3%;
+        left: 40px;
     }
 
     .content__menu-list {
         display: flex;
         list-style: none;
-
     }
 
     .content__link {
@@ -400,95 +401,121 @@ button {
     }
 
 
-    .content__link:focus {
+    .content__link:hover {
         background: #FFFFFF;
         border: 2px solid #B8FFEC;
         border-radius: 6px;
     }
 
-    .content__about{
-        position: relative;
-        left: 3%;
+    .content__about {
         display: flex;
-        flex-wrap: wrap;
-        gap: 5%;
+        left: 40px;
+        position: relative;
+        gap: 48px;
+
     }
 
-    .content__about-text{
-        order: 0;
-        width: 50%;
-    }
-
-    .content__about-text_768 {
-        font-family: 'TT Lakes Regular';
-        font-size: 14px;
-        letter-spacing: 0.2px;
-        line-height: 18px;
-       
-    }
-
-    .about__text-2 {
-        line-height: 24px;
-        font-size: 16px;
-        font-family: 'TT Lakes Medium';
-        letter-spacing: -0.2px;
-       
-    }
-
-    .about__text-2::before{
-        content: '';
-        background-image: url(./src/img/text.svg);
-        width: 8px;
-        height: 11px; 
-        position: absolute;
-        left:-15%;
-        top:25%;
-    }
-    .about__elem {
-        position: absolute;
-        top: 80%;
-        left: 7%;
-        order: 2;
-    }
-
-    .about__elem-2 {
-        height: 259.66px;
-        order: 1;
-    }
-
-    .content__about-text_320,
-    .content__about-text_1120 {
-        display: none;
-    }
-
-}
-
-
-@media screen and (min-width: 1120px) {
-    .container {
-        margin: auto;
-        text-align: left;
-
-        background-color: #F8F8F8;
+    .content__about-text {
         display: flex;
         flex-direction: column;
         gap: 24px;
     }
 
-    .header__nav {
-        padding:2%;
-        background-color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        position: relative;
-        gap: 5.5%;
-        display: contents;
+    .content__about-text>p {
         font-family: 'TT Lakes Regular';
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        line-height: 18px;
+        width: 312px;
+        height: 160px;
+        overflow: hidden;
     }
 
-  
 
-    .header__nav-icon {
+    .about__elem::before {
+        content: '';
+        background-image: url(./src/img/text.svg);
+        width: 8px;
+        height: 11px;
+        position: absolute;
+        right: 103%;
+        top: 25%;
+    }
+
+    .about__elem {
+        left: 10%;
+        position: relative;
+        line-height: 24px;
+        font-size: 16px;
+        font-family: 'TT Lakes Medium';
+        letter-spacing: -0.2px;
+    }
+
+    .about__elem-img {
+        display: flex;
+        align-items: flex-start;
+        height: 259px;
+        left: -16px;
+        position: relative;
+    }
+
+
+}
+
+
+@media screen and (min-width: 1120px) {
+    .container-forPC {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
+
+    }
+
+    .container {
+        overflow-x: hidden;
+        background-color: #F8F8F8;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+    .header__nav-userGroup,
+    .header__logo,
+    .header__nav-menu>li {
+        display: none;
+
+    }
+
+    .header__nav-toolsGroup {
+        font-family: 'TT Lakes Regular';
+        position: relative;
+        left: 850px;
+        display: flex;
+        top: 35px;
+        gap: 160px;
+        cursor: pointer;
+    }
+
+    .icon:first-of-type::before {
+        content: 'Оставить заявку';
+        position: absolute;
+        top: 8px;
+        left: -140px;
+        width: 125px;
+        cursor: pointer;
+    }
+
+    .icon:last-of-type::before {
+        content: 'Статус ремонта';
+        position: absolute;
+        top: 8px;
+        left: 65px;
+        width: 125px;
+        cursor: pointer;
+    }
+
+    .icon {
         width: 40px;
         height: 40px;
         background: #FF3E79;
@@ -498,38 +525,6 @@ button {
         align-items: center;
     }
 
-    .header__nav-icon>button {
-        position: relative;
-        justify-items: center;
-    }
-
-
-
-    .header__nav-icon.search {
-        position: absolute;
-        top: 3%;
-        right: 3%;
-    }
-
-    .header__nav-icon.search::before{
-        position: absolute;
-        content: 'Статус ремонта';
-        right: 70%;
-        width: 350%;
-    }
-
-    .header__nav-icon.tools {
-        position: absolute;
-        right: 20%;
-        top: 3%;
-    }
-
-    .header__nav-icon.tools::before{
-        position: absolute;
-        content: 'Оставить заявку';
-        right: 90%;
-        width: 350%;
-    }
 
     .content {
         display: flex;
@@ -544,7 +539,7 @@ button {
         background-color: #41F6D7;
         position: absolute;
         gap: 12px;
-        left: -3%;
+        left: -38px;
         border-radius: 10px;
     }
 
@@ -555,21 +550,19 @@ button {
         font-family: 'TT Lakes Bold';
         position: relative;
         display: flex;
-        left: 3%;
-
+        left: 40px;
     }
 
     .content__menu {
         overflow-x: auto;
         position: relative;
-        display: flex;
-        left: 3%;
+        left: 40px;
+
     }
 
     .content__menu-list {
         display: flex;
         list-style: none;
-
     }
 
     .content__link {
@@ -586,74 +579,68 @@ button {
     }
 
 
-    .content__link:focus {
+    .content__link:hover {
         background: #FFFFFF;
         border: 2px solid #B8FFEC;
         border-radius: 6px;
     }
 
-    .content__about{
-        position: relative;
-        left: 3%;
+    .content__about {
         display: flex;
-        flex-wrap: wrap;
-        gap: 5%;
+        left: 40px;
+        position: relative;
+        gap: 48px;
     }
 
-    .content__about-text{
-        order: 0;
-        width: 40%;
+    .content__about-text {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
     }
 
-    .content__about-text_1120 {
+    .content__about-text>p {
         font-family: 'TT Lakes Regular';
         font-size: 14px;
         letter-spacing: 0.2px;
         line-height: 18px;
-       
+        width: 490px;
+        height: 160px;
+        overflow: hidden;
     }
 
-    .about__text-2 {
+
+    .about__elem::before {
+        content: '';
+        background-image: url(./src/img/text.svg);
+        width: 8px;
+        height: 11px;
+        position: absolute;
+        right: 103%;
+        top: 25%;
+
+    }
+
+    .about__elem {
+        left: 10%;
+        position: relative;
         line-height: 24px;
         font-size: 16px;
         font-family: 'TT Lakes Medium';
         letter-spacing: -0.2px;
-       
     }
 
-    .about__text-2::before{
-        content: '';
-        background-image: url(./src/img/text.svg);
-        width: 8px;
-        height: 11px; 
-        position: absolute;
-        left:-15%;
-        top:25%;
-    }
-    .about__elem {
-        position: absolute;
-        top: 50%;
-        left: 3%;
-        order: 2;
+    .about__elem-img {
+        display: flex;
+        justify-content: space-evenly;
+        height: 334px;
+        width: 530px;
+        left: -16px;
+        position: relative;
     }
 
-    .about__elem-2 {
-        width: 50%;
-        height: 383.66px;
-        order: 1;
+    .header__nav-menu,
+    .header {
+        display: contents;
     }
-
-    .about__elem-2>img{
-      width: 150%;
-    }
-
-    .content__about-text_320,
-    .content__about-text_768,
-    .header__logo,
-    .header__nav-icon.menu,
-    .header__group-user {
-        display: none;
-    }
-
 
 }
