@@ -242,6 +242,8 @@ button {
         width: 288px;
         height: 90px;
         overflow: hidden;
+
+
     }
 
 
@@ -277,6 +279,7 @@ button {
     .header__nav-userGroup {
         display: none;
     }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
@@ -460,6 +463,9 @@ button {
     }
 
 
+
+
+
 }
 
 
@@ -484,7 +490,6 @@ button {
     .header__logo,
     .header__nav-menu>li {
         display: none;
-
     }
 
     .header__nav-toolsGroup {
@@ -497,7 +502,7 @@ button {
         cursor: pointer;
     }
 
-    .icon:first-of-type::before {
+    .header__nav-toolsGroup li:nth-child(1)::before {
         content: 'Оставить заявку';
         position: absolute;
         top: 8px;
@@ -506,7 +511,7 @@ button {
         cursor: pointer;
     }
 
-    .icon:last-of-type::before {
+    .header__nav-toolsGroup li:nth-child(2)::before {
         content: 'Статус ремонта';
         position: absolute;
         top: 8px;
@@ -643,4 +648,99 @@ button {
         display: contents;
     }
 
+}
+
+
+   /* боковое меню */
+
+   .container-burger {
+    overflow-x: hidden;
+    width: 320px;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: 'TT Lakes Regular';
+    box-shadow: 3px 0 20px 0 rgba(105,105,105,0.5);
+
+}
+
+.header-burger {
+    padding: 24px;
+}
+
+.header__nav-burger>ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-burger__logo {
+    position: relative;
+    top: -5px;
+    left: -25px;
+}
+
+.footer-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-burger__userGroup {
+    display: flex;
+    gap: 16px;
+}
+
+.menu__list:first-child::before{
+    content: '';
+    background-color: #41F6D7;
+    width: 4px;
+    height: 32px;
+    border-radius: 2px;
+    position: absolute;
+    left:-24px;
+    top:-5px;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    left: 24px;
+}
+
+.menu__list>li:hover{
+    color: #7E7E82;
+    opacity: 0.5;
+    transition: color 0.8s, opacity 0.8s;
+}
+
+.footer-burger{
+    position: relative;
+    left: 24px;
+    top:268px;
+}
+
+.conacts__number{
+    font-family: 'TT Lakes Bold';
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.footer-burger__lang{
+    display: flex;
+    gap:7px;
+    padding:24px 24px 24px 0;
+}
+
+.footer-burger__lang>button:hover{
+    color: #7E7E82;
+    opacity: 0.5;
+    transition: color 0.8s, opacity 0.8s;
+}
+
+.icon:hover{
+   opacity:0.2;
+   transition: opacity 0.8s;
 }
