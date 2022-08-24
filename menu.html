@@ -10,21 +10,21 @@
 
 <body>
     <div class="container-burger">
-        <header class="header-burger">
+        <div class="header-burger">
             <nav class="header__nav-burger">
                 <ul>
                     <li class="icon">
                         <button class="icon__close"><img src='./src/img/close.svg' alt="menu"></button>
                     </li>
                     <li class="header-burger__logo">
-                        <a href="#"><img src="./src/img/logo.png" style="height: 51px;" alt="logo"> </a>
+                        <a href="#"><img src="./src/img/logo.png" alt="logo"> </a>
                     </li>
                     <li class="icon">
                         <button class="icon__search"><img src='./src/img/searchMenu.svg' alt="menu"></button>
                     </li>
                 </ul>
             </nav>
-        </header>
+        </div>
 <div class="menu">
     <ul class="menu__list">
         <li><a href="#">Ремонт техники</a></li>
@@ -37,7 +37,7 @@
         <li><a href="#"></a>Контакты</li>
     </ul>
 </div>
-<footer class="footer-burger">
+<div class="footer-burger">
     <div class="footer-burger__user">
         <ul class="footer-burger__userGroup">
             <li class="icon">
@@ -52,17 +52,21 @@
         </ul>
     </div>
     <div class="footer-burger__contacts">
-        <p>mail@ops.com</p><br>
-        <p class="conacts__number">8 800 535 3535</p>
+        <button>mail@ops.com</button>
+        <button class="contacts__number">8 800 535 3535</button>
     </div>
     
     <div class="footer-burger__lang">
-<button>RU</button>
-<button>EN</button>
-<button>CH</button>
+<input type="radio" id="ru">
+<label for="ru">RU</label>
+<input type="radio" id="en">
+<label for="en">EN</label>
+<input type="radio" id="cn">
+<label for="cn">CN</label>
+
 
     </div>
-</footer>
+</div>
        
         </div>
 </body>
