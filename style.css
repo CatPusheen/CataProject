@@ -726,7 +726,7 @@ height: 80%;
     content: '';
     background-color: #41F6D7;
     width: 4px;
-    height: 20px;
+    height: 30px;
     border-radius: 2px;
     position: absolute;
     left:-0.5px;
@@ -739,18 +739,20 @@ height: 80%;
     gap: 32px;
     position: relative;
     padding-left: 24px;
+  
 }
 
 .menu__list>li:hover {
     color: #7E7E82;
     opacity: 0.5;
-    transition: color 0.8s, opacity 0.8s;
+    transition: color 0.3s, opacity 0.3s;
+    cursor: pointer;
 }
 
 
 
 .footer-burger {
-    height: 60%;
+    height: 50%;
     flex-direction: column;
     display: flex;
     justify-content: flex-end;
@@ -789,6 +791,10 @@ padding-bottom: 32px;
 .footer-burger__lang{
     display: flex;
     gap:10px;
+    font-family: 'TT Lakes Regular';
+}
+
+.footer-burger__lang>button>label{
     font-family: 'TT Lakes Regular';
 }
 
