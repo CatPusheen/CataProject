@@ -10,73 +10,70 @@
 </head>
 
 <body>
-    <aside class="container-burger">
-        <div class="header-burger">
-            <nav class="header__nav-burger">
-                <ul class="header__list">
-                    <li>
-                        <button class="icon"><img src='./src/img/close.svg' alt="menu"></button>
-                    </li>
-                    <li class="header-burger__logo">
-                        <a href="#"><img src="./src/img/logo.png" alt="logo"> </a>
-                    </li>
-                    <li>
-                        <button class="icon"><img src='./src/img/searchMenu.svg' alt="menu"></button>
-                    </li>
-                </ul>
+    <aside class="aside-menu">
+        <div class="aside-menu__top">
+            <div class="aside-menu__header">
+                <nav class="aside-menu__nav">
+                    <ul class="header__list">
+                        <li>
+                            <button class="icon"><img src='./src/img/close.svg' alt="menu"></button>
+                        </li>
+                        <li class="aside-menu__logo">
+                            <a class="img-logo" href="#"><img src="./src/img/logo.png" alt="logo"> </a>
+                        </li>
+                        <li>
+                            <button class="icon"><img src='./src/img/searchMenu.svg' alt="menu"></button>
+                        </li>
+                    </ul>
 
-            </nav>
-        </div>
-        <div class="menu">
-            <ul class="menu__list">
-                <li><a href="#">Ремонт техники</a></li>
-                <li><a href="#">Услуги и сервисы</a></li>
-                <li><a href="#">Корпоративным клиентам</a></li>
-                <li><a href="#">Продавцам техники</a></li>
-                <li><a href="#">Партнерам</a></li>
-                <li><a href="#">Производителям</a></li>
-                <li><a href="#">Наши сервисные центры</a></li>
-                <li><a href="#"></a>Контакты</li>
-            </ul>
-        </div>
-        <div class="footer-burger">
-            <div class="footer-burger__user">
-                <ul class="footer-burger__userGroup">
-                    <li>
-                        <button class="icon"><img src="./src/img/phone.svg" alt="call"></button>
-                    </li>
-                    <li>
-                        <button class="icon"><img src="./src/img/message.svg" alt="msg"></button>
-                    </li>
-                    <li>
-                        <button class="icon"><img src="./src/img/user.svg" alt="user"></button>
-                    </li>
+                </nav>
+            </div>
+            <div class="menu">
+                <ul class="menu__list">
+                    <li class="list-point"><a class='list-link' href="#">Ремонт техники</a></li>
+                    <li class="list-point"><a class='list-link' href="#">Услуги и сервисы</a></li>
+                    <li class="list-point"><a class='list-link' href="#">Корпоративным клиентам</a></li>
+                    <li class="list-point"><a class='list-link' href="#">Продавцам техники</a></li>
+                    <li class="list-point"><a class='list-link' href="#">Партнерам</a></li>
+                    <li class="list-point"><a class='list-link' href="#">Производителям</a></li>
+                    <li class="list-point"><a class='list-link' href="#">Наши сервисные центры</a></li>
+                    <li class="list-point"><a class='list-link' href="#"></a>Контакты</li>
                 </ul>
             </div>
-
-
         </div>
-        <div class="footer-burger__contacts">
-            <button>mail@ops.com</button>
-            <button class="contacts__number">8 800 535 3535</button>
+        <div class="aside-menu__bottom">
+            <ul class="footer__userGroup">
+                <li>
+                    <button class="icon"><img src="./src/img/phone.svg" alt="call"></button>
+                </li>
+                <li>
+                    <button class="icon"><img src="./src/img/message.svg" alt="msg"></button>
+                </li>
+                <li>
+                    <button class="icon"><img src="./src/img/user.svg" alt="user"></button>
+                </li>
+            </ul>
+            <div class="aside__footer-contacts">
+                <button class="contacts__mail">mail@ops.com</button>
+                <button class="contacts__number">8 800 535 3535</button>
+            </div>
+            <div class="aside__footer-lang">
+                <form class="aside__footer-form">
+                    <input class="aside__footer-input" type="radio" id="ru">
+                    <label class="aside__footer-label" for="ru">RU</label>
+                </form>
+                <form class="aside__footer-form">
+                    <input class="aside__footer-input" type="radio" id="en">
+                    <label class="aside__footer-label" for="en">EN</label>
+                </form>
+                <form class="aside__footer-form">
+                    <input class="aside__footer-input" type="radio" id="cn">
+                    <label class="aside__footer-label" for="cn">CN</label>
+                </form>
+
+
+            </div>
         </div>
-        <div class="footer-burger__lang">
-            <button>
-                <input type="radio" id="ru">
-                <label for="ru">RU</label>
-            </button>
-            <button>
-                <input type="radio" id="en">
-                <label for="en">EN</label>
-            </button>
-            <button>
-                <input type="radio" id="cn">
-                <label for="cn">CN</label>
-            </button>
-
-
-        </div>
-
     </aside>
 </body>
 

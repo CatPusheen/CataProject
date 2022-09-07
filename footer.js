@@ -1,17 +1,19 @@
+
+ let list=document.querySelector('.list-invis');
+ let btn=document.getElementById('footer__btn');
+
+ btn.addEventListener('click',viewMore);
+
 function viewMore(){
-    let list=document.getElementById('list__more');
-    let btn=document.getElementById('footer__btn');
 
-    if (list.style.display === 'none'){
-
-        list.style.display = 'flex';
-        list.style.animation = 'showBlock 1s linear forwards'
-        btn.className='btn__click'
+    if (!list.classList.contains('list-vis')){
+        list.classList.add('list-vis');
+        btn.classList.add('btn__click');
         btn.innerHTML='Скрыть';
     } else {
-        list.style.display = 'none';
+        list.classList.remove('list-vis');
         btn.innerHTML='Показать все';
-        btn.className='footer__btn'
+        btn.classList.remove('btn__click');
     }
 }
 
@@ -35,4 +37,5 @@ new Swiper('.swiper-container', {
         clickable: true
     }
 });
+
 
